@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../resources/chill-guy-memes-1120706217.jpg">
+    <title>BIT 2024 Project | The Srilanka Vacation Planner</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">
+                    <h2>Employee Form</h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <table>
+                        <form>
+                            Full Name : <input type="text" placeholder="Enter Your Full Name" id="textFullName"
+                                required><br><br>
+
+                            Calling Name : <input type="text" placeholder="Entar Calling Name" id="textCallingName"
+                                required><br><br>
+
+                            Address : <textarea id="textAddress" placeholder="Enter your Address"
+                                required></textarea><br><br>
+
+                            Email : <input type="text" pattern="Enter Email" id="textEmail" required><br><br>
+
+                            Mobile Number : <input type="text" placeholder="Enter Your Mobile Number" id="numberMobile"
+                                required>
+
+                            Gender : <input type="radio" id="radioMale" name="gender" required>Male
+                            <input type="radio" id="radioFemale" name="gender" value="female" required>Female <br><br>
+
+                            Civil Status : <select id="selectCivilStatus" required>
+                                <option value="" disabled selected>Select Civil Status</option>
+                                <option value="married">Married</option>
+                                <option value="single">Single</option>
+                            </select><br><br>
+
+                            Date of Birth : <input type="date" id="dobDate" min="1970-01-01" max="2006-01-01"
+                                required><br><br>
+
+                            Designation : <select id="selectDesignation" required>
+                                <option value="" disabled selected>Select Designation</option>
+                                <option value="manager">Manager</option>
+                                <option value="cashier">Cashier</option>
+
+                            </select>
+
+                            </select>
+                            <br><br>
+
+                            <input type="submit" id="buttonSubmit" value="Submit">
+                        </form>
+                    </table>
+                </td>
+                <td>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>EMP Number</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Gender</th>
+                                <th>Civil Status</th>
+                                <th>Dasignation</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>E24001</td>
+                                <td>Ruvinda Lakmal</td>
+                                <td>ruvindalakmal18@gmail.com</td>
+                                <td>0763284859</td>
+                                <td>Male</td>
+                                <td>Single</td>
+                                <td>Manager</td>
+                                <td>
+                                    <button type="button">Edit</button>
+                                    <button type="button">View</button>
+                                    <button type="button">Delete</button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>E24002</td>
+                                <td>Roshan Lakmal</td>
+                                <td>roshanpersonal@gmail.com</td>
+                                <td>0768578675</td>
+                                <td>Male</td>
+                                <td>Married</td>
+                                <td>Manager</td>
+                                <td>
+                                    <button type="button">Edit</button>
+                                    <button type="button">View</button>
+                                    <button type="button">Delete</button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

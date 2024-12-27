@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../resources/chill-guy-memes-1120706217.jpg">
+    <title>BIT Project 2024 : D-5 Practical</title>
+
+    <link rel="stylesheet" href="../resources/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resources/css/D5-1.css">
+    <link rel="stylesheet" href="../resources/fontawesome-free-6.7.1-web/css/all.css">
+    <script src="../resources/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--Title-->
+        <div class="row mt-2">
+            <div class="col-12 text-center fw-bold title">
+                <h2>Employee Management</h2>
+            </div>
+        </div>
+        <!--Modal Button-->
+        <div class="row mt-2">
+            <div class="col-10 text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEmployeeForm">
+                    Add New Employee
+                </button>
+            </div>
+
+        </div>
+        <!--Modal Form-->
+        <div class="modal fade" id="modalEmployeeForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body form-area">
+                                <form id="formEmployee" onsubmit="return false">
+                                    <div class="row mt-2">
+                                        <!--                                <div class="col-12 fw-bold text-end">-->
+                                        <!--                                    <p>Required<span class="text-danger">*</span></p>-->
+                                        <!--                                </div>-->
+                                    </div>
+                                    <!--Full Name-->
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <label for="textFullName" class="form-label fw-bold">Full Name:<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" id="textFullName" placeholder="Enter Full Name" onkeyup="fullNameValidator(this, 'employee' , 'fullName')" required>
+                                            <div class="form-text">ex: Ruvinda Lakmal</div>
+                                        </div>
+                                    </div>
+                                    <!--Calling Name & NIC-->
+                                    <div class="row mt-2">
+                                        <!--Calling Name-->
+                                        <div class="col-6">
+                                            <label for="textCallingName" class="form-label fw-bold">Calling Name:<span class="text-danger">*</span></label>
+                                            <select class="form-select" id="textCallingName" onchange="callingNameValidator(this , 'employee' , 'callingName')" required></select>
+                                            <div class="form-text">ex: Ruvinda</div>
+                                        </div>
+                                        <!--NIC-->
+                                        <div class="col-6">
+                                            <label for="textNIC" class="form-label fw-bold">NIC:<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" id="textNIC" placeholder="Enter NIC" onkeyup="nicValidator(this , 'employee' , 'nic')" required>
+                                            <div class="form-text">ex: xxxxxxxxxV/xxxxxxxxxxxx</div>
+                                        </div>
+                                    </div>
+                                    <!--Gender & DOB-->
+                                    <div class="row mt-2">
+                                        <!--Gender-->
+                                        <div class="col-6">
+                                            <div class="row">
+                                                <label class="form-label fw-bold">Gender:<span class="text-danger">*</span></label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="selectGenderMale" name="gender" onchange="employee.gender = this.value" value="Male" required>
+                                                <label class="form-check-label" for="selectGenderMale">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="selectGenderFemale" name="gender" onchange="employee.gender = this.value" value="Female" required>
+                                                <label class="form-check-label" for="selectGenderFemale">Female</label>
+                                            </div>
+                                        </div>
+                                        <!--DOB-->
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">Date of Birth:<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="date" id="dateOfBirth" onkeydown="return false" onchange="dateValidator(this , 'employee' , 'dob')" required>
+                                        </div>
+                                    </div>
+                                    <!--Email & Civil Status-->
+                                    <div class="row mt-2">
+                                        <!--Email-->
+                                        <div class="col-7">
+                                            <label for="textEmail" class="form-label fw-bold">Email:<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="email" id="textEmail" placeholder="Enter Email" onkeyup="emailValidator(this , 'employee' , 'email')" required>
+                                            <div class="form-text">ex: ruvindpersonal@gmail.com</div>
+                                        </div>
+                                        <!--Civil Status-->
+                                        <div class="col-5">
+                                            <label for="selectCivilStatus" class="form-label fw-bold">Civil Status:<span class="text-danger">*</span></label>
+                                            <select class="form-select" id="selectCivilStatus" onchange="civilStatusValidator(this , 'employee' , 'civilStatus')" required>
+                                                <option value="" selected disabled>Select Your Civil Status</option>
+                                                <option value="married">Married</option>
+                                                <option value="single">Single</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Mobile Number and Land number-->
+                                    <div class="row mt-2">
+                                        <!--Mobile Number-->
+                                        <div class="col-5">
+                                            <label for="textMobieNumber" class="form-label fw-bold">Mobile Number:<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="tel" id="textMobieNumber" placeholder="Enter Phone Number" onkeyup="mobileNumberValidator(this , 'employee' , 'mobileNumber')" required>
+                                            <div class="form-text">ex: 07xxxxxxxx</div>
+                                        </div>
+                                        <div class="col-2"></div>
+                                        <div class="col-5">
+                                            <label for="textLandNumber" class="form-label fw-bold">Land Number:</label>
+                                            <input class="form-control" type="tel" id="textLandNumber" placeholder="Enter Land Number" onkeyup="landNumberValidator(this , 'employee' , 'landNumber')" required>
+                                            <div class="form-text">ex: 03xxxxxxxx</div>
+                                        </div>
+                                    </div>
+                                    <!--Designation & Employee Status-->
+                                    <div class="row mt-2">
+                                        <!--Designation-->
+                                        <div class="col-6">
+                                            <label for="selectDesignation" class="form-label fw-bold">Designation:<span class="text-danger">*</span></label>
+                                            <select class="form-select" id="selectDesignation" onchange="selectValidator(this , 'employee' , 'designation_id')" required>
+<!--                                                <option value="select" selected>Select Designation</option>-->
+<!--                                                <option value="manager">Manager</option>-->
+<!--                                                <option value="cashier">Cashier</option>-->
+                                            </select>
+                                        </div>
+                                        <!--Employee Status-->
+                                        <div class="col-6">
+                                            <label for="selectEmployeeStatus" class="form-label fw-bold">Employee Status:<span class="text-danger">*</span></label>
+                                            <select class="form-select" id="selectEmployeeStatus" onchange="selectValidator(this , 'employee' , 'employeeStatus_id')" required>
+<!--                                                <option value="select" selected>Select Employee Status</option>-->
+<!--                                                <option value="active">Active</option>-->
+<!--                                                <option value="resign">Resign</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Buttons-->
+                                    <div class="row mt-2">
+                                        <div class="col-3 text-start">
+                                            <button type="button" class="btn btn-outline-info" onclick="buttonEmployeeDelete()"><i class="fa-regular fa-circle-check"></i> Clear</button>
+                                        </div>
+                                        <div class="col-9 text-end">
+                                            <button type="submit" class="btn btn-outline-warning" onclick="buttonEmployeeUpdate()"><i class="fa-solid fa-wrench"></i> Update</button>
+                                            <button type="submit" class="btn btn-outline-success" onclick="buttonEmployeeSubmit()"> <i class="fa-solid fa-thumbs-up"></i> Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Table Area-->
+        <div class="row m-2 justify-content-center">
+            <div class="col-10">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-hover table-striped" id="tableEmployee">
+                            <thead class="table-dark">
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Employee NO</th>
+                                <th>Full Name</th>
+                                <th>Mobile Number</th>
+                                <th>Email</th>
+                                <th>NIC</th>
+                                <th>Gender</th>
+                                <th>Date of Birth</th>
+                                <th>Civil Status</th>
+                                <th>Designation</th>
+                                <th>Employee Status</th>
+                                <th class="text-center">Modify</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tableEmployeeBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Common.js"></script>
+    <script src="Empoyee.js"></script>
+</body>
+</html>

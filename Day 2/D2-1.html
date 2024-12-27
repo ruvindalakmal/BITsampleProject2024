@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../resources/chill-guy-memes-1120706217.jpg">
+    <title>BIT 2024 Project | The Srilanka Vacation Planner</title>
+</head>
+<body>
+    <table>
+        <form>
+            <tr>
+                <th colspan="2"><h2>Employee Form</h2></th>
+            </tr>
+            <tr>
+                <th>Full Name :</th>
+                <td><input type="text" required placeholder="Enter Your Full Name" id="textFullName"></td>
+            </tr>
+            <tr>
+                <th>Calling Name :</th>
+                <td><input type="text" required placeholder="Enter Your Calling Name" id="textCallingName"></td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <th>Mobile Number :</th>
+            </tr>
+            <tr>
+                <td><input type="text" required placeholder="Enter Your Email" id="textEmail"></td>
+                <td><input type="number" required placeholder="Enter Your Mobile Number" id="numberMobile"></td>
+            </tr>
+            <tr>
+                <th>Address :</th>
+                <td><textarea id="textAddress" placeholder="Enter Your Current Address"></textarea></td>
+            </tr>
+            <tr>
+                <th colspan="2">Gender :</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="radioMale" name="gender" required>Male
+                </td>
+                <td>
+                    <input type="radio" id="radioFemale" name="gender" value="female" required> Female
+                </td>
+            </tr>
+            <tr>
+                <th>Civil Status :</th>
+                <td>
+                    <select id="selectCivilStatus" required>
+                        <option value="" disabled selected>Select Civil Status</option>
+                        <option value="married">Married</option>
+                        <option value="single">Single</option>
+                                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Date of Birth :</th>
+                <td>
+                    <input type="date" id="dobDate" min="1970-01-01" max="2006-01-01" required>
+                </td>
+            </tr>   
+            <tr>
+                <th>Designation :</th>
+                <td>
+                    <select id="selectDesignation" required>
+                        <option value="" disabled selected>Select Designation</option>
+                        <option value="manager">Manager</option>
+                        <option value="cashier">Cashier</option>
+                
+                                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" id="buttonSubmit" value="Submit"></th>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

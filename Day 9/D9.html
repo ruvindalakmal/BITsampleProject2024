@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../resources/chill-guy-memes-1120706217.jpg">
+    <title>BIT Project 2024 : D-9 Practical</title>
+
+    <link rel="stylesheet" href="../resources/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resources/css/D5-1.css">
+    <link rel="stylesheet" href="../resources/fontawesome-free-6.7.1-web/css/all.css">
+    <script src="../resources/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row m-2">
+            <div class="col-5">
+                <select id="selectDesignation" class="form-select" onchange="console.log(JSON.parse(this.value))"></select>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
+                <select id="selectEmployeeStatus" class="form-select" onchange="console.log(JSON.parse(this.value))"></select>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col">
+                <table class="table table-hover table-striped" id="tableEmployee">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Employee NO</th>
+                        <th>Full Name</th>
+                        <th>Mobile Number</th>
+                        <th>NIC</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Civil Status</th>
+                        <th>Designation</th>
+                        <th>Employee Status</th>
+                        <th>Modify</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableEmployeeBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+<script src="D9.js"></script>
+</body>
+</html>
